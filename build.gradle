@@ -22,7 +22,6 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
-apply plugin: "kotlin-allopen"
 apply plugin: 'org.jetbrains.kotlin.jvm'
 
 group = "io.brick"
