@@ -2,7 +2,9 @@ package io.brick.springcorebasic.member
 
 class MemoryMemberRepository : MemberRepository {
 
-    private var store = HashMap<Long, Member>();
+    companion object {
+        val store = HashMap<Long, Member>()
+    }
 
     override fun save(member: Member) {
         store.put(member.id, member)
