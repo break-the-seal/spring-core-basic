@@ -7,7 +7,8 @@ import io.brick.springcorebasic.member.MemberServiceImpl
 class MemberApp {}
 
 fun main(args: Array<String>) {
-    val memberService = MemberServiceImpl()
+    val appConfig = AppConfig()
+    val memberService = appConfig.memberService()
     val member = Member(1L, "member-A", Grade.VIP)
     memberService.join(member)
 
