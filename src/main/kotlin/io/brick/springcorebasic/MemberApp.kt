@@ -1,12 +1,15 @@
 package io.brick.springcorebasic
 
+import io.brick.springcorebasic.config.AppConfig
 import io.brick.springcorebasic.member.Grade
 import io.brick.springcorebasic.member.Member
 import io.brick.springcorebasic.member.MemberService
 import io.brick.springcorebasic.member.MemberServiceImpl
 
 fun main(args: Array<String>) {
-    val memberService: MemberService = MemberServiceImpl()
+    val appConfig = AppConfig()
+
+    val memberService = appConfig.memberService()
     val member = Member(
         id = 1L,
         name = "memberA",

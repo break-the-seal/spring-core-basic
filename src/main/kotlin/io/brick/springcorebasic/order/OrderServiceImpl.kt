@@ -1,13 +1,11 @@
 package io.brick.springcorebasic.order
 
 import io.brick.springcorebasic.discount.DiscountPolicy
-import io.brick.springcorebasic.discount.FixDiscountPolicy
 import io.brick.springcorebasic.member.MemberRepository
-import io.brick.springcorebasic.member.MemoryMemberRepository
 
 class OrderServiceImpl(
-    private val memberRepository: MemberRepository = MemoryMemberRepository(),
-    private val discountPolicy: DiscountPolicy = FixDiscountPolicy()
+    private val memberRepository: MemberRepository,
+    private val discountPolicy: DiscountPolicy
 ): OrderService {
     override fun createOrder(
         memberId: Long,

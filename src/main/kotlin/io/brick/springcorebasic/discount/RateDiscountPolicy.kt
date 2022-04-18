@@ -3,14 +3,14 @@ package io.brick.springcorebasic.discount
 import io.brick.springcorebasic.member.Grade
 import io.brick.springcorebasic.member.Member
 
-class FixDiscountPolicy : DiscountPolicy {
+class RateDiscountPolicy : DiscountPolicy {
     companion object {
-        private const val DISCOUNT_FIX_AMOUNT = 10
+        private const val DISCOUNT_PERCENT = 10
     }
 
     override fun discount(member: Member, price: Int): Int {
         return if (member.grade == Grade.VIP) {
-            DISCOUNT_FIX_AMOUNT
+            price * DISCOUNT_PERCENT / 100
         } else {
             0
         }
