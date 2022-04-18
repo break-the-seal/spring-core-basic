@@ -1,7 +1,7 @@
 package io.brick.springcorebasic.member
 
 class MemberServiceImpl(
-    private val memberRepository: MemberRepository = MemberRepositoryImpl()
+    private val memberRepository: MemberRepository = MemoryMemberRepository()
 ) : MemberService {
     override fun join(member: Member) {
         memberRepository.save(member)

@@ -1,6 +1,6 @@
 package io.brick.springcorebasic.member
 
-class MemberRepositoryImpl: MemberRepository {
+class MemoryMemberRepository: MemberRepository {
     companion object {
         val store: MutableMap<Long, Member> = mutableMapOf()
     }
