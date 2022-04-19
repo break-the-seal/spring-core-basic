@@ -5,7 +5,7 @@ import io.brick.springcorebasic.member.Member
 
 class FixDiscountPolicy : DiscountPolicy {
     companion object {
-        private const val DISCOUNT_FIX_AMOUNT = 10
+        private const val DISCOUNT_FIX_AMOUNT = 1000
     }
 
     override fun discount(member: Member, price: Int): Int {

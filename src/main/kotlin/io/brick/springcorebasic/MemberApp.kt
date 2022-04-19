@@ -4,12 +4,15 @@ import io.brick.springcorebasic.config.AppConfig
 import io.brick.springcorebasic.member.Grade
 import io.brick.springcorebasic.member.Member
 import io.brick.springcorebasic.member.MemberService
-import io.brick.springcorebasic.member.MemberServiceImpl
+import org.springframework.context.ApplicationContext
+import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 fun main(args: Array<String>) {
-    val appConfig = AppConfig()
+//    val appConfig = AppConfig()
+//    val memberService = appConfig.memberService()
+    val context: ApplicationContext = AnnotationConfigApplicationContext(AppConfig::class.java)
+    val memberService = context.getBean("memberService", MemberService::class.java)
 
-    val memberService = appConfig.memberService()
     val member = Member(
         id = 1L,
         name = "memberA",
