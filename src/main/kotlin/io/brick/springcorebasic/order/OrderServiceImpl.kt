@@ -6,7 +6,7 @@ import io.brick.springcorebasic.member.MemberRepository
 class OrderServiceImpl(
     private val memberRepository: MemberRepository,
     private val discountPolicy: DiscountPolicy
-): OrderService {
+) : OrderService {
     override fun createOrder(
         memberId: Long,
         itemName: String,
@@ -26,5 +26,10 @@ class OrderServiceImpl(
             itemPrice = itemPrice,
             discountPrice = discountPrice
         )
+    }
+
+    // 테스트 용도
+    fun getMemberRepository(): MemberRepository {
+        return this.memberRepository
     }
 }

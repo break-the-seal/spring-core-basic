@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 class MemberServiceTest {
 
-    lateinit var memberService: MemberService
+    private lateinit var memberService: MemberService
 
     @BeforeEach
     fun setUp() {

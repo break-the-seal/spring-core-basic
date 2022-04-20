@@ -16,16 +16,19 @@ import org.springframework.context.annotation.Configuration
 class AppConfig {
     @Bean
     fun memberService(): MemberService {
+        println("call AppConfig.memberService")
         return MemberServiceImpl(memberRepository())
     }
 
     @Bean
     fun memberRepository(): MemberRepository {
+        println("call AppConfig.memberRepository")  // 한 번만 호출된다.
         return MemoryMemberRepository()
     }
 
     @Bean
     fun orderService(): OrderService {
+        println("call AppConfig.orderService")
         return OrderServiceImpl(memberRepository(), discountPolicy())
     }
 
