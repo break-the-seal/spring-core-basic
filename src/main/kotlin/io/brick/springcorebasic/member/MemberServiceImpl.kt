@@ -1,6 +1,14 @@
 package io.brick.springcorebasic.member
 
-class MemberServiceImpl(
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
+
+/**
+ * @Autowired > ac.getBean(MemberRepository::class.java)
+ * 생략해도 알아서 autowired 수행
+ */
+@Component
+class MemberServiceImpl @Autowired constructor(
     private val memberRepository: MemberRepository
 ) : MemberService {
     override fun join(member: Member) {

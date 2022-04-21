@@ -2,8 +2,11 @@ package io.brick.springcorebasic.order
 
 import io.brick.springcorebasic.discount.DiscountPolicy
 import io.brick.springcorebasic.member.MemberRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
-class OrderServiceImpl(
+@Component
+class OrderServiceImpl @Autowired constructor(
     private val memberRepository: MemberRepository,
     private val discountPolicy: DiscountPolicy
 ) : OrderService {
