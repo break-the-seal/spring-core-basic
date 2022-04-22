@@ -5,7 +5,7 @@ import io.brick.springcorebasic.member.MemberRepository
 import io.brick.springcorebasic.member.MemoryMemberRepository
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
-import org.springframework.context.annotation.ComponentScan.*
+import org.springframework.context.annotation.ComponentScan.Filter
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.FilterType
 
@@ -22,8 +22,8 @@ class AutoAppConfig {
     // Overriding bean definition for bean 'memoryMemberRepository'
     // 아래와 같이 수동 빈 등록이 자동 빈 등록보다 우선권을 가지게 된다. (Overriding)
     // 하지만 Spring Boot에서는 이러한 중복 빈 등록에 대해서 아예 허용을 하지 않는다.
-    @Bean(name = ["memoryMemberRepository"])
-    fun memberRepository(): MemberRepository {
-        return MemoryMemberRepository()
-    }
+//    @Bean(name = ["memoryMemberRepository"])
+//    fun memberRepository(): MemberRepository {
+//        return MemoryMemberRepository()
+//    }
 }
