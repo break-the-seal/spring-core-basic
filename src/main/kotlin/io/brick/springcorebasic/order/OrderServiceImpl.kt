@@ -2,7 +2,9 @@ package io.brick.springcorebasic.order
 
 import io.brick.springcorebasic.discount.DiscountPolicy
 import io.brick.springcorebasic.member.MemberRepository
+import org.springframework.stereotype.Component
 
+@Component
 class OrderServiceImpl(
     private val memberRepository: MemberRepository,
     private val discountPolicy: DiscountPolicy
