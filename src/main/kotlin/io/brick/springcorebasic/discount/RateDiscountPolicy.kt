@@ -1,5 +1,6 @@
 package io.brick.springcorebasic.discount
 
+import io.brick.springcorebasic.annotation.MainDiscountPolicy
 import io.brick.springcorebasic.member.Grade
 import io.brick.springcorebasic.member.Member
 import org.springframework.beans.factory.annotation.Qualifier
@@ -7,7 +8,8 @@ import org.springframework.context.annotation.Primary
 import org.springframework.stereotype.Component
 
 @Component
-@Primary
+//@Primary
+@MainDiscountPolicy
 class RateDiscountPolicy : DiscountPolicy {
 
     private val discountPercent = 10

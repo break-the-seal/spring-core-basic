@@ -1,5 +1,6 @@
 package io.brick.springcorebasic.order
 
+import io.brick.springcorebasic.annotation.MainDiscountPolicy
 import io.brick.springcorebasic.discount.DiscountPolicy
 import io.brick.springcorebasic.member.MemberRepository
 import org.springframework.beans.factory.annotation.Qualifier
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component
 @Component
 class OrderServiceImpl(
     private val memberRepository: MemberRepository,
+    @MainDiscountPolicy
     private val discountPolicy: DiscountPolicy
 ) : OrderService {
 
