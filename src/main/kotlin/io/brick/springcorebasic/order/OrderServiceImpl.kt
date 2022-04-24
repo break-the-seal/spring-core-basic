@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component
 @Component
 class OrderServiceImpl(
     private val memberRepository: MemberRepository,
-    @Qualifier("mainDiscountPolicy")
     private val discountPolicy: DiscountPolicy
 ) : OrderService {
 
