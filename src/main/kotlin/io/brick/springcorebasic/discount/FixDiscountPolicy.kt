@@ -2,7 +2,9 @@ package io.brick.springcorebasic.discount
 
 import io.brick.springcorebasic.member.Grade
 import io.brick.springcorebasic.member.Member
+import org.springframework.stereotype.Component
 
+@Component
 class FixDiscountPolicy : DiscountPolicy {
     companion object {
         private const val DISCOUNT_FIX_AMOUNT = 1000

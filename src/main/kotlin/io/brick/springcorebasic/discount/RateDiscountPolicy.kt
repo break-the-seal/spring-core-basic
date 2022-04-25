@@ -1,10 +1,14 @@
 package io.brick.springcorebasic.discount
 
+import io.brick.springcorebasic.annotation.MainDiscountPolicy
 import io.brick.springcorebasic.member.Grade
 import io.brick.springcorebasic.member.Member
+import org.springframework.context.annotation.Primary
 import org.springframework.stereotype.Component
 
 @Component
+//@Primary
+@MainDiscountPolicy
 class RateDiscountPolicy : DiscountPolicy {
     companion object {
         private const val DISCOUNT_PERCENT = 10
