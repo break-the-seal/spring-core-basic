@@ -2,13 +2,14 @@ package io.brick.springcorebasic.common
 
 import mu.KLogging
 import org.springframework.context.annotation.Scope
+import org.springframework.context.annotation.ScopedProxyMode
 import org.springframework.stereotype.Component
 import java.util.UUID
 import javax.annotation.PostConstruct
 import javax.annotation.PreDestroy
 
 @Component
-@Scope(value = "request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 class MyLogger {
     companion object: KLogging()
 

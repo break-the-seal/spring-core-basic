@@ -117,3 +117,13 @@ implementation("javax.inject:javax.inject:1")
 - request scope 지정된 bean을 다른 곳에서 생성자 주입으로 설정하고 SpringBootApplication run하면 에러
 - request scope은 실제 request가 발생해야 생성되기 때문
 - `Provider`를 사용해 하나의 request(thread 당)에서 같은 bean 객체를 받을 수 있다.
+
+### Proxy
+```kotlin
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+```
+- 가짜 프록시를 주입하는 곳에 주입
+- 가짜 프록시는 메소드 호출시 내부에 진짜 myLogger bean 객체를 찾는 위임 로직이 있음
+- **가짜 프록시는 request scope와 무관, 내부에 실제 bean을 찾는 로직이 있을 뿐 싱글톤처럼 작동**
+
+> 프록시 사용 이유는 진짜 원하는 객체 bean 조회를 필요한 시점까지 lazy 처리한다는 것에 있다.

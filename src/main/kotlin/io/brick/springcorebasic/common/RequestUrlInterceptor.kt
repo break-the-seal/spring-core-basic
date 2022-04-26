@@ -1,13 +1,12 @@
 package io.brick.springcorebasic.common
 
 import mu.KLogging
-import org.springframework.beans.factory.ObjectProvider
 import org.springframework.web.servlet.HandlerInterceptor
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 class RequestUrlInterceptor(
-    private val myLoggerProvider: ObjectProvider<MyLogger>
+    private val myLogger: MyLogger
 ): HandlerInterceptor {
     companion object: KLogging()
 
@@ -15,8 +14,6 @@ class RequestUrlInterceptor(
         logger.info { "##################### Interceptor preHadnler #####################" }
 
         val requestURL = request.requestURL.toString()
-
-        val myLogger = myLoggerProvider.getObject()
 
         myLogger.requestURL = requestURL
         myLogger.log("RequestUrlInterceptor.preHandle")
