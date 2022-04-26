@@ -41,9 +41,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-    implementation 'io.github.microutils:kotlin-logging:1.12.5'
+    implementation('io.github.microutils:kotlin-logging:2.1.21')
+
+    // JSR-330 Provider
+    implementation("javax.inject:javax.inject:1")
 
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
