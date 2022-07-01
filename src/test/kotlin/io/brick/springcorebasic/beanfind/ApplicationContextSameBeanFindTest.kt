@@ -45,12 +45,12 @@ class ApplicationContextSameBeanFindTest {
     @Configuration
     private class SameBeanConfig {
         @Bean
-        fun memberRepository1(): MemoryMemberRepository {
+        fun memberRepository1(): MemberRepository {
             return MemoryMemberRepository()
         }
 
         @Bean
-        fun memberRepository2(): MemoryMemberRepository {
+        fun memberRepository2(): MemberRepository {
             return MemoryMemberRepository()
         }
     }
